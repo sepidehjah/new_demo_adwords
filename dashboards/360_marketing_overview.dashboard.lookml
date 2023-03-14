@@ -1,7 +1,7 @@
 - dashboard: 360_marketing_overview
   title: 360 Marketing Overview
   layout: newspaper
-  preferred_viewer: dashboards
+  preferred_viewer: dashboards-next
   query_timezone: user_timezone
   elements:
   - title: Customer Trends
