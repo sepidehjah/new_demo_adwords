@@ -2,7 +2,9 @@
   title: Advertising Pulse
   layout: newspaper
   preferred_viewer: dashboards-next
+  description: ''
   query_timezone: user_timezone
+  preferred_slug: 4fch19vyRX6V3lZfCDYZbm
   embed_style:
     background_color: "#f6f8fa"
     show_title: false
@@ -23,6 +25,7 @@
       campaigns.advertising_channel: "-NULL"
     sorts: [campaigns.advertising_channel, adevents.created_date desc]
     limit: 500
+    query_timezone: America/Los_Angeles
     stacking: normal
     show_value_labels: false
     label_density: 25
@@ -46,14 +49,11 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     show_null_points: true
     point_style: circle
     interpolation: monotone
-    query_timezone: America/Los_Angeles
     column_spacing_ratio:
     column_group_spacing_ratio:
-
     series_colors: {}
     series_types: {}
     hidden_fields: []
@@ -100,7 +100,6 @@
     interpolation: monotone
     show_totals_labels: false
     show_silhouette: false
-
     ordering: none
     show_null_labels: false
     y_axes: [{label: CPC ($), maxValue: !!null '', minValue: !!null '', orientation: left,
@@ -116,7 +115,6 @@
     series_labels:
       adevents.cost_per_click: CPC ($)
       adevents.total_clicks: Click
-
     series_colors: {}
     x_axis_datetime_label: "%b %d"
     hidden_fields: []
@@ -140,7 +138,6 @@
     dynamic_fields: [{table_calculation: type, label: Type, expression: '"Display"',
         value_format: !!null '', value_format_name: !!null '', _kind_hint: dimension,
         _type_hint: string}]
-
     show_single_value_title: true
     show_comparison: true
     comparison_type: progress_percentage
@@ -191,8 +188,6 @@
     dynamic_fields: [{table_calculation: type, label: Type, expression: '"Display"',
         value_format: !!null '', value_format_name: !!null '', _kind_hint: dimension,
         _type_hint: string}]
-
-
     show_single_value_title: true
     show_comparison: false
     comparison_type: value
@@ -243,8 +238,6 @@
     sorts: [adevents.total_clicks desc]
     limit: 500
     column_limit: 50
-
-
     show_single_value_title: true
     show_comparison: false
     comparison_type: value
@@ -295,8 +288,6 @@
     sorts: [adevents.total_clicks desc]
     limit: 500
     column_limit: 50
-
-
     show_single_value_title: true
     show_comparison: true
     comparison_type: progress_percentage
@@ -368,7 +359,6 @@
     stacking: ''
     limit_displayed_rows: false
     legend_position: center
-
     series_types: {}
     point_style: circle
     series_colors: {}
@@ -383,12 +373,10 @@
     show_dropoff: true
     show_totals_labels: false
     show_silhouette: false
-
     leftAxisLabelVisible: false
     leftAxisLabel: ''
     rightAxisLabelVisible: false
     rightAxisLabel: ''
-
     smoothedBars: false
     orientation: automatic
     labelPosition: left
@@ -447,7 +435,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     show_row_numbers: true
     truncate_column_names: false
     hide_totals: false
@@ -468,7 +455,7 @@
     y_axes: []
     listen:
       Date: adevents.created_date
-    row: 19
+    row: 22
     col: 4
     width: 20
     height: 8
@@ -526,7 +513,6 @@
     limit_displayed_rows: false
     hidden_series: []
     legend_position: center
-
     series_types:
       Search - revenue_adjusted: column
       Display - revenue_adjusted: column
@@ -559,10 +545,51 @@
     hidden_fields: [session_purchase_facts.total_attribution, quota, revenue_adjusted,
       events.event_week, session_purchase_facts.revenue, total_revenue_won]
     listen: {}
-    row: 27
+    row: 30
     col: 0
     width: 12
     height: 6
+  - name: "<span class='fa fa-laptop'> Clicks and Impressions</span>"
+    type: text
+    title_text: "<span class='fa fa-laptop'> Clicks and Impressions</span>"
+    subtitle_text: ''
+    row: 0
+    col: 0
+    width: 24
+    height: 2
+  - name: ''
+    type: text
+    subtitle_text: How are we doing in search?
+    body_text: ''
+    row: 2
+    col: 0
+    width: 8
+    height: 2
+  - name: " (2)"
+    type: text
+    subtitle_text: How are we doing in Display?
+    row: 2
+    col: 8
+    width: 8
+    height: 2
+  - name: " (3)"
+    type: text
+    title_text: ''
+    subtitle_text: How are we doing overall?
+    row: 2
+    col: 16
+    width: 8
+    height: 2
+  - name: "<span class='fa fa-dollar'> Revenue and Cost</span>"
+    type: text
+    title_text: "<span class='fa fa-dollar'> Revenue and Cost</span>"
+    subtitle_text: How are we tracking towards spend budget and revenue goals?
+    body_text: "**Recommended Action** Dig deeper into under performing campaigns\
+      \ and figure out what is going wrong"
+    row: 16
+    col: 0
+    width: 24
+    height: 3
   - title: Budget Target
     name: Budget Target
     model: thelook_adwords
@@ -614,7 +641,6 @@
     stacking: ''
     limit_displayed_rows: false
     legend_position: center
-
     series_types:
       goal: area
       Search - revenue_adjusted: column
@@ -651,7 +677,7 @@
     hidden_fields: [quota, adevents.total_cost, spend_adjusted, events.event_week,
       total_spent]
     listen: {}
-    row: 33
+    row: 36
     col: 0
     width: 12
     height: 5
@@ -671,8 +697,6 @@
         value_format: !!null '', value_format_name: percent_0, _kind_hint: measure,
         _type_hint: number}]
     query_timezone: America/Los_Angeles
-
-
     show_single_value_title: true
     show_comparison: true
     comparison_type: change
@@ -701,7 +725,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     single_value_title: Total Spend
     comparison_label: Previous Period
@@ -710,7 +733,7 @@
     y_axes: []
     listen:
       Date: adevents.previous_period_filter
-    row: 19
+    row: 22
     col: 0
     width: 4
     height: 4
@@ -731,8 +754,6 @@
         value_format: !!null '', value_format_name: percent_0, _kind_hint: measure,
         _type_hint: number}]
     query_timezone: America/Los_Angeles
-
-
     show_single_value_title: true
     show_comparison: true
     comparison_type: change
@@ -761,7 +782,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     single_value_title: Associated Revenue
     comparison_label: Previous Period
@@ -770,7 +790,7 @@
     y_axes: []
     listen:
       Date: adevents.previous_period_filter
-    row: 23
+    row: 26
     col: 0
     width: 4
     height: 4
@@ -825,7 +845,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     show_row_numbers: true
     truncate_column_names: false
     hide_totals: false
@@ -837,7 +856,6 @@
     hidden_fields: [session_purchase_facts.total_attribution, expense, session_purchase_facts.net_profit,
       offset, offset_for_negative]
     series_types: {}
-
     series_colors:
       offset: transparent
       expense_negative: "#294988"
@@ -855,51 +873,10 @@
       first_last: first
       num_rows: '4'
     listen: {}
-    row: 33
+    row: 36
     col: 12
     width: 12
     height: 11
-  - name: "<span class='fa fa-laptop'> Clicks and Impressions</span>"
-    type: text
-    title_text: "<span class='fa fa-laptop'> Clicks and Impressions</span>"
-    subtitle_text: ''
-    row: 0
-    col: 0
-    width: 24
-    height: 2
-  - name: ''
-    type: text
-    subtitle_text: How are we doing in search?
-    body_text: ''
-    row: 2
-    col: 0
-    width: 8
-    height: 2
-  - name: " (2)"
-    type: text
-    subtitle_text: How are we doing in Display?
-    row: 2
-    col: 8
-    width: 8
-    height: 2
-  - name: " (3)"
-    type: text
-    title_text: ''
-    subtitle_text: How are we doing overall?
-    row: 2
-    col: 16
-    width: 8
-    height: 2
-  - name: "<span class='fa fa-dollar'> Revenue and Cost</span>"
-    type: text
-    title_text: "<span class='fa fa-dollar'> Revenue and Cost</span>"
-    subtitle_text: How are we tracking towards spend budget and revenue goals?
-    body_text: "**Recommended Action** Dig deeper into under performing campaigns\
-      \ and figure out what is going wrong"
-    row: 16
-    col: 0
-    width: 24
-    height: 3
   - title: Q Over Q Tracking Revenue Target
     name: Q Over Q Tracking Revenue Target
     model: thelook_adwords
@@ -968,13 +945,12 @@
     hidden_fields: [session_purchase_facts.total_attribution, goal_pace, first_day_of_quarter,
       date, running_revenue, session_purchase_facts.revenue, goal]
     font_size: medium
-
     series_colors:
       goal: "#c8c8ca"
     hidden_series: []
     y_axes: []
     listen: {}
-    row: 38
+    row: 41
     col: 0
     width: 12
     height: 6
@@ -1030,7 +1006,7 @@
         label: Percent (0)
     series_types: {}
     listen: {}
-    row: 27
+    row: 30
     col: 12
     width: 12
     height: 6
@@ -1041,6 +1017,9 @@
     default_value: 90 days ago for 90 days
     allow_multiple_values: true
     required: false
+    ui_config:
+      type: advanced
+      display: popover
     model: thelook_adwords
     explore: events
     listens_to_filters: []
@@ -1051,3 +1030,6 @@
     default_value: ''
     allow_multiple_values: true
     required: false
+    ui_config:
+      type: advanced
+      display: popover

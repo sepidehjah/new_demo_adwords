@@ -3,6 +3,7 @@
   layout: newspaper
   preferred_viewer: dashboards-next
   query_timezone: user_timezone
+  preferred_slug: pwSkck3zvGd1fnhCO7Fc12
   embed_style:
     background_color: "#ffffff"
     show_title: true
@@ -19,8 +20,6 @@
     fields: [adevents.total_clicks, adevents.click_rate]
     limit: 500
     query_timezone: America/Los_Angeles
-
-
     show_single_value_title: true
     show_comparison: true
     comparison_type: value
@@ -49,7 +48,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     single_value_title: Clicks
     comparison_label: "(CTR)"
@@ -72,8 +70,6 @@
     fields: [adevents.total_impressions]
     limit: 500
     query_timezone: America/Los_Angeles
-
-
     show_single_value_title: true
     show_comparison: false
     comparison_type: change
@@ -102,7 +98,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     single_value_title: Impressions
     comparison_label: Weekly Change
@@ -122,8 +117,6 @@
     fields: [adevents.total_cost]
     limit: 500
     query_timezone: America/Los_Angeles
-
-
     show_single_value_title: true
     show_comparison: false
     comparison_type: value
@@ -152,7 +145,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     single_value_title: Total Cost
     comparison_label: Associated Revenue
@@ -172,8 +164,6 @@
     fields: [session_purchase_facts.revenue]
     limit: 500
     query_timezone: America/Los_Angeles
-
-
     show_single_value_title: true
     show_comparison: false
     comparison_type: change
@@ -202,7 +192,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     single_value_title: Associated Revenue
     comparison_label: Campaign End Date
@@ -226,6 +215,7 @@
     sorts: [adevents.created_date]
     limit: 500
     column_limit: 50
+    query_timezone: America/Los_Angeles
     stacking: ''
     show_value_labels: false
     label_density: 25
@@ -250,8 +240,6 @@
     interpolation: linear
     show_totals_labels: false
     show_silhouette: false
-
-    query_timezone: America/Los_Angeles
     ordering: none
     show_null_labels: false
     hidden_fields: []
@@ -265,7 +253,6 @@
             axisId: adevents.total_clicks}], showLabels: true, showValues: false,
         maxValue: !!null '', minValue: !!null '', valueFormat: !!null '', unpinAxis: false,
         tickDensity: default, tickDensityCustom: 5, type: linear}]
-
     series_colors: {}
     listen:
       Campaign Name: campaigns.campaign_name
@@ -318,7 +305,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     conditional_formatting: [{type: low to high, value: !!null '', background_color: !!null '',
         font_color: !!null '', palette: {name: Custom, colors: ["#ffffff", "#87d79b"]},
@@ -377,7 +363,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     interpolation: linear
     show_row_numbers: true
     truncate_column_names: false
@@ -400,7 +385,6 @@
       show_hide: hide
       first_last: first
       num_rows: 0
-
     reference_lines: []
     trend_lines: [{color: "#999292", label_position: right, period: 7, regression_type: linear,
         series_index: 1, show_label: true, label_type: string, label: Trend}]
@@ -447,8 +431,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
-
     series_colors: {}
     x_axis_label: Keyword Name
     y_axes: [{label: '', maxValue: !!null '', minValue: !!null '', orientation: left,
@@ -505,79 +487,6 @@
     col: 12
     width: 12
     height: 11
-  - name: "<span class='fa fa-dollar'>Campaign Performance</span>"
-    type: text
-    title_text: "<span class='fa fa-dollar'>Campaign Performance</span>"
-    subtitle_text: How is this campaign doing?
-    body_text: "**Recommended Action** If a campaign is not performing as expected,\
-      \ pause the campaign on Adwords and investigate different triggers to pull on\
-      \ the Google Advertising Page"
-    row: 0
-    col: 0
-    width: 24
-    height: 4
-  - title: Attribution Benchmark
-    name: Attribution Benchmark
-    model: thelook_adwords
-    explore: events
-    type: looker_line
-    fields: [sessions.weeks_since_campaing_start, campaigns.count, campaigns.campaign_benchmark,
-      session_purchase_facts.revenue]
-    pivots: [campaigns.campaign_benchmark]
-    filters:
-      sessions.weeks_since_campaing_start: "[0, 12]"
-    sorts: [campaigns.campaign_benchmark 0, sessions.weeks_since_campaing_start]
-    limit: 500
-    column_limit: 50
-    dynamic_fields: [{table_calculation: campaign_revenue, label: Campaign Revenue,
-        expression: "${session_purchase_facts.revenue}/${campaigns.count}", value_format: !!null '',
-        value_format_name: usd, _kind_hint: measure, _type_hint: number}, {table_calculation: rolling_attribution,
-        label: Rolling Attribution, expression: 'if(is_null(${session_purchase_facts.revenue}),null,running_total(${session_purchase_facts.revenue}/${campaigns.count}))',
-        value_format: !!null '', value_format_name: usd_0, _kind_hint: measure, _type_hint: number}]
-    stacking: ''
-    show_value_labels: false
-    label_density: 25
-    legend_position: center
-    x_axis_gridlines: false
-    y_axis_gridlines: true
-    show_view_names: false
-    limit_displayed_rows: false
-    y_axis_combined: true
-    show_y_axis_labels: true
-    show_y_axis_ticks: true
-    y_axis_tick_density: default
-    y_axis_tick_density_custom: 5
-    show_x_axis_label: true
-    show_x_axis_ticks: true
-    x_axis_scale: linear
-    y_axis_scale_mode: linear
-    x_axis_reversed: false
-    y_axis_reversed: false
-    show_null_points: false
-    point_style: circle_outline
-    interpolation: linear
-    ordering: none
-    show_null_labels: false
-    show_totals_labels: false
-    show_silhouette: false
-
-    series_types: {}
-    y_axes: [{label: '', orientation: left, series: [{id: 681 - NA - Search - Competition,
-            name: 681 - NA - Search - Competition, axisId: session_purchase_facts.return_on_investment},
-          {id: Benchmark, name: Benchmark, axisId: session_purchase_facts.return_on_investment}],
-        showLabels: true, showValues: true, unpinAxis: true, tickDensity: default,
-        type: linear}]
-    hidden_fields: [session_purchase_facts.total_attribution, campaigns.count, calculation_1,
-      campaign_revenue, session_purchase_facts.revenue]
-    x_axis_label: Weeks Since Start
-
-    series_colors: {}
-    listen:
-      Campaign Name: campaigns.campaign_selector
-    row: 8
-    col: 0
-    width: 10
-    height: 7
   - title: ROI
     name: ROI
     model: thelook_adwords
@@ -586,8 +495,6 @@
     fields: [session_purchase_facts.ROI]
     limit: 500
     query_timezone: America/Los_Angeles
-
-
     show_single_value_title: true
     show_comparison: false
     comparison_type: change
@@ -616,7 +523,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     single_value_title: ROI
     comparison_label: Campaign End Date
@@ -642,8 +548,6 @@
     dynamic_fields: [{table_calculation: is_active, label: Is Active, expression: 'if(${campaigns.is_active_now},
           "Is Active", "Not Active")', value_format: !!null '', value_format_name: !!null '',
         _kind_hint: dimension, _type_hint: string}]
-
-
     show_single_value_title: true
     show_comparison: true
     comparison_type: change
@@ -672,7 +576,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     comparison_label: ''
     hidden_fields: [campaigns.is_active_now]
@@ -729,7 +632,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     y_axes: [{label: '', orientation: left, series: [{id: 681 - NA - Search - Competition,
             name: 681 - NA - Search - Competition, axisId: session_purchase_facts.return_on_investment},
@@ -745,6 +647,77 @@
     col: 10
     width: 6
     height: 7
+  - name: "<span class='fa fa-dollar'>Campaign Performance</span>"
+    type: text
+    title_text: "<span class='fa fa-dollar'>Campaign Performance</span>"
+    subtitle_text: How is this campaign doing?
+    body_text: "**Recommended Action** If a campaign is not performing as expected,\
+      \ pause the campaign on Adwords and investigate different triggers to pull on\
+      \ the Google Advertising Page"
+    row: 0
+    col: 0
+    width: 24
+    height: 4
+  - title: Attribution Benchmark
+    name: Attribution Benchmark
+    model: thelook_adwords
+    explore: events
+    type: looker_line
+    fields: [sessions.weeks_since_campaing_start, campaigns.count, campaigns.campaign_benchmark,
+      session_purchase_facts.revenue]
+    pivots: [campaigns.campaign_benchmark]
+    filters:
+      sessions.weeks_since_campaing_start: "[0, 12]"
+    sorts: [campaigns.campaign_benchmark 0, sessions.weeks_since_campaing_start]
+    limit: 500
+    column_limit: 50
+    dynamic_fields: [{table_calculation: campaign_revenue, label: Campaign Revenue,
+        expression: "${session_purchase_facts.revenue}/${campaigns.count}", value_format: !!null '',
+        value_format_name: usd, _kind_hint: measure, _type_hint: number}, {table_calculation: rolling_attribution,
+        label: Rolling Attribution, expression: 'if(is_null(${session_purchase_facts.revenue}),null,running_total(${session_purchase_facts.revenue}/${campaigns.count}))',
+        value_format: !!null '', value_format_name: usd_0, _kind_hint: measure, _type_hint: number}]
+    stacking: ''
+    show_value_labels: false
+    label_density: 25
+    legend_position: center
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_view_names: false
+    limit_displayed_rows: false
+    y_axis_combined: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    x_axis_scale: linear
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    show_null_points: false
+    point_style: circle_outline
+    interpolation: linear
+    ordering: none
+    show_null_labels: false
+    show_totals_labels: false
+    show_silhouette: false
+    series_types: {}
+    y_axes: [{label: '', orientation: left, series: [{id: 681 - NA - Search - Competition,
+            name: 681 - NA - Search - Competition, axisId: session_purchase_facts.return_on_investment},
+          {id: Benchmark, name: Benchmark, axisId: session_purchase_facts.return_on_investment}],
+        showLabels: true, showValues: true, unpinAxis: true, tickDensity: default,
+        type: linear}]
+    hidden_fields: [session_purchase_facts.total_attribution, campaigns.count, calculation_1,
+      campaign_revenue, session_purchase_facts.revenue]
+    x_axis_label: Weeks Since Start
+    series_colors: {}
+    listen:
+      Campaign Name: campaigns.campaign_selector
+    row: 8
+    col: 0
+    width: 10
+    height: 7
   filters:
   - name: Campaign Name
     title: Campaign Name
@@ -752,6 +725,9 @@
     default_value: ''
     allow_multiple_values: true
     required: false
+    ui_config:
+      type: advanced
+      display: popover
     model: thelook_adwords
     explore: events
     listens_to_filters: []
