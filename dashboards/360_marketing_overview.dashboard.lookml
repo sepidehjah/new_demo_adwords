@@ -2,7 +2,9 @@
   title: 360 Marketing Overview
   layout: newspaper
   preferred_viewer: dashboards-next
+  description: ''
   query_timezone: user_timezone
+  preferred_slug: 3cYkrp9Q5SA9x0P7medB9f
   elements:
   - title: Customer Trends
     name: Customer Trends
@@ -54,7 +56,7 @@
     ordering: none
     show_null_labels: false
     hidden_fields: []
-    listen:
+    listen: {}
     row: 7
     col: 0
     width: 14
@@ -152,7 +154,6 @@
     show_dropoff: true
     show_totals_labels: false
     show_silhouette: false
-
     value_labels: legend
     label_type: labPer
     inner_radius: 50
@@ -198,14 +199,12 @@
     interpolation: monotone
     show_totals_labels: false
     show_silhouette: false
-
     value_labels: legend
     label_type: labPer
     ordering: none
     show_null_labels: false
     series_types: {}
     inner_radius: 50
-
     series_colors: {}
     hidden_fields: []
     y_axes: []
@@ -251,7 +250,6 @@
     stacking: ''
     limit_displayed_rows: false
     legend_position: center
-
     series_types: {}
     point_style: none
     series_colors: {}
@@ -263,7 +261,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     show_null_points: true
     interpolation: monotone
     show_row_numbers: true
@@ -326,7 +323,6 @@
     stacking: ''
     limit_displayed_rows: false
     legend_position: center
-
     series_types: {}
     point_style: none
     series_colors: {}
@@ -365,8 +361,6 @@
     dynamic_fields: [{table_calculation: prior_month, label: Prior Month, expression: "${adevents.total_cost}/offset(${adevents.total_cost},\
           \ 1)-1", value_format: !!null '', value_format_name: percent_0, _kind_hint: measure,
         _type_hint: number}]
-
-
     show_single_value_title: true
     show_comparison: true
     comparison_type: change
@@ -397,7 +391,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     hidden_fields: []
     comparison_label: Prior Quarter
@@ -424,8 +417,6 @@
     dynamic_fields: [{table_calculation: prior_period, label: Prior Period, expression: "${session_attribution.total_attribution}/offset(${session_attribution.total_attribution},1)-1",
         value_format: !!null '', value_format_name: percent_0, _kind_hint: measure,
         _type_hint: number}]
-
-
     show_single_value_title: true
     show_comparison: true
     comparison_type: change
@@ -454,7 +445,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     single_value_title: Adwords Revenue
     value_format: "$#,##0"
@@ -486,8 +476,6 @@
     dynamic_fields: [{table_calculation: prior_period, label: Prior Period, expression: "${sessions.count_with_purchase}/offset(${sessions.count_with_purchase},1)-1",
         value_format: !!null '', value_format_name: percent_0, _kind_hint: measure,
         _type_hint: number}]
-
-
     show_single_value_title: true
     show_comparison: true
     comparison_type: change
@@ -516,7 +504,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     single_value_title: Purchases
     comparison_label: Prior Quarter
@@ -544,8 +531,6 @@
     dynamic_fields: [{table_calculation: prior_period, label: Prior Period, expression: "${user_session_fact.count}/offset(\
           \ ${user_session_fact.count},1)-1", value_format: !!null '', value_format_name: percent_0,
         _kind_hint: measure, _type_hint: number}]
-
-
     show_single_value_title: true
     show_comparison: true
     comparison_type: change
@@ -574,7 +559,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     single_value_title: Users Acquired
     value_format: "###,###"
@@ -626,10 +610,8 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
     inner_radius: 50
-
     series_colors: {}
     hidden_fields: []
     y_axes: []
@@ -652,21 +634,23 @@
     name: First Touch to Last Touch Analysis
     model: thelook_adwords
     explore: events
-    type: sankey2
+    type: marketplace_viz_sankey::sankey-marketplace
     fields: [user_session_fact.site_acquisition_source, sessions.traffic_source, session_purchase_facts.revenue]
     filters:
       user_session_fact.site_acquisition_source: "-NULL"
     sorts: [session_purchase_facts.revenue desc]
     limit: 500
     column_limit: 50
-
+    hidden_fields: []
+    hidden_points_if_no: []
+    series_labels: {}
+    show_view_names: true
     stacking: ''
     show_value_labels: false
     label_density: 25
     legend_position: center
     x_axis_gridlines: false
     y_axis_gridlines: true
-    show_view_names: true
     limit_displayed_rows: false
     y_axis_combined: true
     show_y_axis_labels: true
@@ -683,10 +667,9 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     series_types: {}
-    hidden_fields: []
     y_axes: []
+    defaults_version: 0
     listen: {}
     row: 17
     col: 0
@@ -753,7 +736,6 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-
     hidden_fields: []
     listen:
       Attribution Source: session_attribution.attribution_filter
@@ -769,7 +751,7 @@
     fields: [campaigns.campaign_name, adevents.total_cost, session_attribution.ROI,
       session_attribution.total_attribution]
     filters:
-      adevents.created_quarter: 2019-Q4
+      adevents.created_quarter: 2 quarters
     sorts: [adevents.total_cost desc 0, session_attribution.ROI desc]
     limit: 10
     query_timezone: America/Los_Angeles
