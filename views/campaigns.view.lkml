@@ -59,8 +59,8 @@ derived_table: {
     sql: CONCAT(${campaign_id},' - ',${campaign_name_raw}) ;;
     link: {
       label: "Campaign Performance Dashboard"
-      icon_url: "http://www.looker.com/favicon.ico"
-      url: "https://demo.looker.com/dashboards-next/pwSkck3zvGd1fnhCO7Fc12?Campaign Name={{ value | url_encode }}"
+      icon_url: "https://icon-library.com/images/dashboard-icon/dashboard-icon-16.jpg"
+      url: "/dashboards/thelook_adwords::campaign_performance_lookup?Campaign+Name={{ value | url_encode }}"
     }
     link: {
       label: "View on AdWords"
@@ -84,7 +84,7 @@ derived_table: {
 
       param: {
         name: "link"
-        value: "https://demo.looker.com/dashboards/pwSkck3zvGd1fnhCO7Fc12?Campaign%20Name={{value | encode_uri}}"
+        value: "https://holtzbrinck.cloud.looker.com/dashboards/thelook_adwords::campaign_performance_lookup?Campaign+Name={{value | encode_uri}}"
       }
 
       param: {
@@ -117,7 +117,7 @@ derived_table: {
 
       param: {
         name: "link"
-        value: "https://demo.looker.com/dashboards/pwSkck3zvGd1fnhCO7Fc12?Campaign%20Name={{value | encode_uri}}"
+        value: "https://holtzbrinck.cloud.looker.com/dashboards/thelook_adwords::campaign_performance_lookup?Campaign+Name={{value | encode_uri}}"
       }
 
       param: {
@@ -145,8 +145,8 @@ derived_table: {
     sql: ${TABLE}.campaign_name ;;
     link: {
       label: "Campaign Performance Dashboard"
-      icon_url: "http://www.looker.com/favicon.ico"
-      url: "https://demo.looker.com/dashboards-next/pwSkck3zvGd1fnhCO7Fc12?Campaign Name={{ campaign_name._value | url_encode }}"
+      icon_url: "https://icon-library.com/images/dashboard-icon/dashboard-icon-16.jpg"
+      url: "/dashboards/thelook_adwords::campaign_performance_lookup?Campaign+Name={{ campaign_name._value | url_encode }}"
     }
     link: {
       label: "View on AdWords"
